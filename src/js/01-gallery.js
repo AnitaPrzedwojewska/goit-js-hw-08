@@ -6,6 +6,7 @@ import { galleryItems } from './gallery-items';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryElement = document.querySelector('.gallery');
+galleryElement.style.listStyleType = "none";
 const galleryList = galleryItems
   .map(
     ({ preview, original, description }) =>
