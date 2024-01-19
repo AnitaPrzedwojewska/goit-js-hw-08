@@ -31,9 +31,13 @@ form.elements.message.addEventListener('input', throttle((event) => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log(formState);
-  localStorage.removeItem(localStorageKey);
-  formState.email = '';
-  formState.message = '';
-  form.reset();
+  if ((formState.email.trim().length > 0) && (formState.message.trim().length > 0)) {
+    console.log(formState);
+    localStorage.removeItem(localStorageKey);
+    formState.email = '';
+    formState.message = '';
+    form.reset();
+  } else {
+    window.alert("Wypełnij wszystkie pola!");
+  }
 });
