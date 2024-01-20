@@ -20,7 +20,6 @@ form.elements.message.value = formState.message;
 form.addEventListener('input', throttle(({target}) => {
   const element = target.name;
   formState[element] = target.value;
-  console.log(formState);
   localStorage.setItem(localStorageKey, JSON.stringify(formState));
 }, 500));
 
